@@ -1,0 +1,37 @@
+<div class="main-new">
+  <div class="main-new-left">
+    <h1 class="main-new-2">基本情報</h1>
+  </div>
+  <div class="main-new-right">
+    <div class="main-room">
+      <h1 class="main-title">ルーム情報登録</h1>
+      
+        <%= form_with model: @room do |form| %>
+          <div class="room-nav required-a">
+            <p>ルーム名</p>
+            <%= form.text_field :room_name %>
+          </div>
+          <div class="room-nav required-a">
+            <p>ルーム紹介</p>
+            <%= form.text_field :room_body %>
+          </div>
+          <div class="room-nav required-a">
+            <p>料金</p>
+            <%= form.text_field :price %>
+          </div>
+          <div class="room-nav required-a">
+            <p>住所</p>
+            <%= form.text_field :address %>
+          </div>
+          <div class="room-nav required-a">
+            <button type="button" class="btn btn-outline-secondary rounded-pill">
+              <%= form.file_field :room_image %>
+            </button>
+          </div>
+          <div class="room-nav">
+            <%= form.submit '登録', class: "button is-success" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

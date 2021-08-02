@@ -1,0 +1,21 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.reservations-nav {
+  padding: 5rem 20rem;
+}
+
+.reservations-nav-new {
+  text-align: center;
+  border: 1px solid #eaedef;
+  padding: 30px;
+}
+
+h4.reservations-title {
+  border-bottom: 1px solid #eaedef;
+  font-size: 25px;
+}
+
+p.border {
+  border-bottom: 1px solid #eaedef;
+}

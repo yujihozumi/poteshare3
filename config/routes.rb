@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: "home#index"
+  get 'users/account'
+  get 'users/profile'
+  get 'rooms/search'
+  post 'users/profile' => 'users#profile'
+  resources :users, only: [:index, :profile, :update] do
+    
+  end
+  resources :rooms
+  resources :reservations
 end

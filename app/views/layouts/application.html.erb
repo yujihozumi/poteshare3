@@ -11,6 +11,77 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="notification is-info">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    
+    <% if flash[:alert] %>
+      <div class="notification is-danger">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+    <header>
+      <div class="header-nav-var">
+        <div class="header-left">
+          <%= link_to root_path, class: "header-menu" do %>
+            <img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png">
+          <% end %>
+          <%= search_form_for @q, url: '/rooms/search' do |f| %>
+            <div class="header-sharch d-lg-inline-block">
+              <%= f.search_field :address_cont, class:'form-control',placeholder: 'エリア' %>
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="header-sharch d-lg-inline-block">
+              <%= f.search_field :room_body_cont, class:'form-control',placeholder: 'キーワード' %>
+              <i class="fas fa-search"></i>
+            </div>
+          
+          <% end %>
+        </div>
+    
+        <% if user_signed_in? %>
+          <div class="header-right">
+            <div class="dropdown">
+                <button class="dropdown__btn" id="dropdown__btn">
+                  <p>ここからメニュー</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="64"/><circle cx="256" cy="448" r="64"/><circle cx="256" cy="64" r="64"/></svg>
+                </button>
+              <div class="dropdown__body">
+                <ul class="dropdown__list">
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__item-link"><%= link_to "ログアウト", destroy_user_session_path,  method: :delete %></a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__item-link"><%= link_to "ルーム登録", new_room_path %></a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__item-link"><%= link_to "予約済みルーム", reservations_path %></a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__item-link"><%= link_to "登録済みルーム", rooms_path %></a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__item-link"><%= link_to "設定", users_profile_path %></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div class="header-right">
+            <%= link_to "ログイン", new_user_session_path, class: "btn-1 header-item" %>
+            <%= link_to "登録する", new_user_registration_path, class: "btn-2 header-item" %>
+          </div>
+        <% end %>  
+      </div>
+    </header>
+    
     <%= yield %>
+    
+    <footer>
+      <p>© 2020 POTEPAN.INC.</p>
+    </footer>
   </body>
 </html>
