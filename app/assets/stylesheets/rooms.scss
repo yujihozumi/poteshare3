@@ -163,8 +163,45 @@ th {
     padding: 8px 15px;
     font-size: 14px;
     letter-spacing: 1px;
+    width: 500px;
 }
 
 .room-posts {
     padding: 30px 60px;
+}
+
+//検索フォーム
+
+.col-xl-3.col-sm-6.col-lg-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.row {
+    display: flex;
+}
+
+.room-frame-inner {
+    border: 1px solid #e2e2e2;
+    margin-bottom: 10px;
+}
+
+.room-image-out {
+    position: relative;
+    width: 100%;
+    background: #F6F8F9;
+}
+
+.room {
+    width: 100%;
+    padding: 30px 60px;
+}
+.room-profile {
+    width: 100%;
+    padding: 15px;
+}
+a {
+    color: #000;
 }

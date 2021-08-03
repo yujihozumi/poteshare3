@@ -8,7 +8,6 @@
         <th>ルーム紹介</th>
         <th>料金</th>
         <th>作成日</th>
-        <th>投稿者</th>
         <th>投稿削除</th>
       </tr>
     </thead>
@@ -20,7 +19,6 @@
           <td><%= room.room_body %></td>
           <td class="price-icon">¥<%= room.price %>円</td>
           <td><%= room.created_at.to_s(:datetime_jp) %></td>
-          <td><%= room.user.username %></td>
           <% if room.user_id == current_user.id %>
             <td><%= link_to "削除", room_path(room.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
           <% end %>

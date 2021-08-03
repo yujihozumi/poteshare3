@@ -7,8 +7,12 @@
             <h5 class="reservations-text-money">
               ¥<%= @room.price %>/ 日
               <%= f.hidden_field :room_name, value:@room.room_name %>
+              <%= f.hidden_field :room_body, value:@room.room_body %>
             </h5>
             <div class="reservations-nav-new-date">
+              <%= f.hidden_field :room_id %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              
               <p class="reservations-text text-1">
                 開始日
                 <%= f.text_field :start_date ,class: "form-control mb-4",:readonly => true %>

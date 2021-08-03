@@ -14,9 +14,6 @@
         <div class="room-nav">
           <p>メールアドレス</p>
           <%= current_user.email %>
-          <%= current_user.username %>
-          <%= current_user.body %>
-          <%= image_tag @user.user_image_url(:thumb ) if @user.user_image.present? %>
         </div>
         <div class="room-nav">
           <p>パスワード</p>

@@ -1,4 +1,4 @@
-<div class="container-fiuld reservations">
+<div class="container-fiuld reservations room-posts">
   <h4 class="pb-4">予約済みルーム一覧</h4>
   <table>
     <thead>
@@ -14,20 +14,20 @@
       </tr>
     </thead>
     <tbody>
-    <% @reservations.each do |reservation| %>
-      <tr>
-      
-        <td>ここにルーム画像</td>
-        <td class="posts-name">ルーム名</td>
-        <td class="posts-content">ルーム紹介</td>
-        <td class="price-icon"><%= reservation.total_price %></td>
-        <td><%= reservation.start_date %></td>
-        <td><%= reservation.end_date %></td>
-        <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
-        <td><%= link_to "キャンセル", reservation_path(reservation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
-      
-      </tr>
-    <% end %>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <% @rooms.each do |room| %>
+            <td><%= image_tag room.room_image.to_s,class: "room-image", width: '240px' ,height: '140px' %></td>
+            <td class="posts-name"><%= link_to"#{room.room_name}", room %></td>
+            <td class="posts-content"><%= room.room_body %></td>
+            <td class="price-icon"><%= reservation.total_price %></td>
+            <td><%= reservation.start_date %></td>
+            <td><%= reservation.end_date %></td>
+            <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
+            <td><%= link_to "キャンセル", reservation_path(reservation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+          <% end %>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div>
