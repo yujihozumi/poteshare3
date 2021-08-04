@@ -4,7 +4,7 @@
       <%= image_tag @room.room_image_url if @room.room_image.present? %>
       <div class="room-show-detile"">
         <div class="user-icon">
-          <p>ユーザーアイコン表示</p>
+          <%= image_tag @room.user.user_image.to_s ,class: "host-icon header-icon", width: '100px' ,height: '100px' %>
         </div>
         <div class="room-profile">
           <p class="room-name"><%= @room.room_name %></p>
@@ -13,7 +13,7 @@
       </div>
       <p class="room-body"><%= @room.room_body %></p>
     </div>
-    <div class="col-2">
+    <div class="col-22">
       <div class="room-show-nav">
         <h5 class="room-money"><%= @room.price %></h5>
         <div class="room-show-date">
@@ -26,12 +26,16 @@
             <%= f.number_field :person_num, class: "form-control mb-4", autocomplete: "人数" %>
             <%= f.hidden_field :room_id, value: @room.id %>
             <%= f.submit "予約確認画面へ", class: "btn btn-primary form-control" %>
+            <%= f.hidden_field :room_name, value: @room.room_name %>
+            <%= f.hidden_field :room_body, value: @room.room_body %>
+            <%= f.hidden_field :room_image, value: @room.room_image %>
           <% end %>
           <%= link_to room_path(@room), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
             <span class="panel-icon">
               <i class="fas fa-trash"></i>
             </span>
              このレシピを削除する
+             
           <% end %>
         </div>
       </div>

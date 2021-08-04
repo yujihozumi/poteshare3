@@ -3,20 +3,14 @@ class UsersController < ApplicationController
     @q = Room.ransack(params[:q])
   end
   
-  def profile_update
+  def profile
     @user = User.find(current_user.id)
-    if current_user.update(params.require(:user).permit(:username, :body, :user_image))
-      flash[:notice] = "ユーザーIDが「#{@user.name}」の情報を更新しました"
-      redirect_to users_profile_path
-    else
-      render :profile
-    end
   end
 
   def update
     @user = User.find(current_user.id)
     if current_user.update(params.require(:user).permit(:username, :body, :user_image))
-      flash[:notice] = "ユーザーIDが「#{@user.name}」の情報を更新しました"
+      flash[:notice] = "ユーザーの情報を更新しました"
       redirect_to users_profile_path
     else
       render :profile
@@ -25,7 +19,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.permit(:user_image, :username, :body)
+    params.require(:user).permit(:user_image, :username, :body)
   end
 
 end

@@ -10,12 +10,14 @@
   <div class="main-new-right">
     <div class="main-room">
       <h1 class="main-title">プロフィール</h1>
-      
-      <form>
-        <%= form_with model: @user do |form| %>
-          
+        
+        <%= form_with model: @user do |form| %>          
+            
           <div class="field">
-            <%= form.label :user_image, "アイコン画像" %>
+            <%= image_tag @user.user_image.to_s, class: "header-icon", width: '65px' ,height: '65px' %>
+          </div>
+          <div class="field">
+            <%= form.label :アイコン画像 %>
             <%= form.file_field :user_image %>
           </div>
 
@@ -33,7 +35,6 @@
             <%= form.submit "更新" %>
           </div>
         <% end %>
-      </form>
     </div>
   </div>
 </div>

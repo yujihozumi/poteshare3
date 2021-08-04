@@ -156,7 +156,7 @@ p.room-name1 {
 
 //予約済みルーム
 h4.pb-4 {
-    font-size: 1.5rem;
+    font-size: 1.5rem!important;
 }
 
 th {
@@ -174,13 +174,17 @@ th {
 
 .col-xl-3.col-sm-6.col-lg-4 {
     position: relative;
-    width: 100%;
     padding-right: 15px;
     padding-left: 15px;
 }
 
 .row {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
 }
 
 .room-frame-inner {
@@ -205,3 +209,5 @@ th {
 a {
     color: #000;
 }
+
+

@@ -31,12 +31,13 @@
           <%= search_form_for @q, url: '/rooms/search' do |f| %>
             <div class="header-sharch d-lg-inline-block">
               <%= f.search_field :address_cont, class:'form-control',placeholder: 'エリア' %>
-                <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-map-marker-alt"></i>
             </div>
             <div class="header-sharch d-lg-inline-block">
               <%= f.search_field :room_body_cont, class:'form-control',placeholder: 'キーワード' %>
               <i class="fas fa-search"></i>
             </div>
+            <%= f.submit '検索', class: "none" %>
           
           <% end %>
         </div>
@@ -45,8 +46,12 @@
           <div class="header-right">
             <div class="dropdown">
                 <button class="dropdown__btn" id="dropdown__btn">
-                  <p>ここからメニュー</p>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="64"/><circle cx="256" cy="448" r="64"/><circle cx="256" cy="64" r="64"/></svg>
+                  <div class="right-menu-icon">
+                    <p class="right-menu"><%= current_user.username %></p>
+                    <p class="right-menu-image">
+                      <%= image_tag current_user.user_image.to_s, class: "header-icon", width: '65px' ,height: '65px' %>
+                    </p>
+                  </div>
                 </button>
               <div class="dropdown__body">
                 <ul class="dropdown__list">

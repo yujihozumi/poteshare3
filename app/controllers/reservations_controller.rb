@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.where(user_id: current_user.id)
     @rooms = Room.all
-    
+    @reservation = Reservation.all
   end
 
   def show
@@ -36,11 +36,11 @@ class ReservationsController < ApplicationController
 
   private
     def reservation_params
-      params.permit(:start_date, :end_date, :person_num, :room_id, :room_image, :room_body).merge(user_id: current_user.id)
+      params.permit(:start_date, :end_date, :person_num, :room_id, :room_name, :room_body, :room_image).merge(user_id: current_user.id)
     end
 
     def reservations_params
-      params.require(:reservation).permit(:start_date, :end_date, :person_num, :total_price, :room_id).merge(user_id: current_user.id)
+      params.require(:reservation).permit(:start_date, :end_date, :person_num, :total_price, :room_id, :room_name, :room_body, :room_image).merge(user_id: current_user.id)
     end
 
    
