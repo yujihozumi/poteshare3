@@ -16,9 +16,9 @@
     <tbody>
       <% @reservations.each do |reservation| %>
         <tr align="center">
-          <td><%= image_tag reservation.room_image.to_s %></td>
-          <td class="posts-name"></td>
-          <td class="posts-content"></td>
+          <td><%= image_tag reservation.room_image.to_s, width: '240px' ,height: '140px' %></td>
+          <td class="posts-name"><%= reservation.room_name %></td>
+          <td class="posts-content"><%= reservation.room_body %></td>
           <td class="price-icon"><%= reservation.total_price %></td>
           <td><%= reservation.start_date %></td>
           <td><%= reservation.end_date %></td>
