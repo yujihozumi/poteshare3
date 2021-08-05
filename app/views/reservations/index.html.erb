@@ -1,0 +1,31 @@
+<div class="room-posts">
+  <h4 class="pb-4">予約済みルーム一覧</h4>
+  <table>
+    <thead>
+      <tr align="center">
+        <th>ルーム画像</th>
+        <th>ルーム名</th>
+        <th>ルーム紹介</th>
+        <th>合計料金</th>
+        <th>開始日</th>
+        <th>終了日</th>
+        <th>予約確定日時</th>
+        <th>予約キャンセル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reservations.each do |reservation| %>
+        <tr align="center">
+          <td><%= image_tag reservation.room_image.to_s, width: '240px' ,height: '140px' %></td>
+          <td class="posts-name"><%= reservation.room_name %></td>
+          <td class="posts-content"><%= reservation.room_body %></td>
+          <td class="price-icon"><%= reservation.total_price %></td>
+          <td><%= reservation.start_date %></td>
+          <td><%= reservation.end_date %></td>
+          <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
+          <td><%= link_to "キャンセル", reservation_path(reservation.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

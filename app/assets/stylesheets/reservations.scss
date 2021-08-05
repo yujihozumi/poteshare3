@@ -1,0 +1,79 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.reservations-nav {
+  padding: 5rem 20rem;
+}
+
+.reservations-nav-new {
+  text-align: center;
+  border: 1px solid #eaedef;
+  padding: 30px;
+}
+
+h4.reservations-title {
+  border-bottom: 1px solid #eaedef;
+  font-size: 25px;
+}
+
+p.border {
+  border-bottom: 1px solid #eaedef;
+}
+
+.container-fiuld.reservations.room-posts {
+  max-width: 100vw;
+  padding: 30px 60px;
+}
+
+tbody tr:nth-child(odd){
+  background-color: #eee
+}
+///
+.room-posts table, .reservations table {
+  min-width: 800px;
+}
+
+.room-posts table thead tr, .reservations table thead tr {
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+}
+
+.room-posts table thead th, .reservations table thead th {
+  padding: 8px 15px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.room-posts table tbody tr, .reservations table tbody tr {
+  border-bottom: 1px solid #eaedef;
+}
+
+//予約確認
+.row-2 {
+  padding: 20px 100px;
+}
+
+.col-md-12.user-view {
+  background-color: #F6F8F9;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.user-view-box {
+  
+}
+
+.update-content {
+  font-size: 20px;
+  padding: 5px;
+}
+
+label.col-md-3 {
+  font-weight: bold;
+}
+
+.col-md-9 {
+  padding: 5px;
+}
+
