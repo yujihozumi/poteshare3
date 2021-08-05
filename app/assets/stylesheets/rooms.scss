@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .main-new {
   display: flex;
+  width: 100%;
 }
 
 .main-new-left {
@@ -11,8 +12,9 @@
 }
 
 h1.main-new-2 {
-    padding: 20%;
-    font-size: 25px;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px 20%;
 }
 
 .main-new-right {
@@ -96,6 +98,7 @@ p.room-body {
 .room-show-nav {
     padding: 20px;
     border: 1px solid #eaedef;
+    margin-left: 150px;
 }
 
 h5.room-money {

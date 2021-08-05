@@ -10,28 +10,26 @@
   <div class="main-new-right">
     <div class="main-room">
       <h1 class="main-title">プロフィール</h1>
-        
-        <%= form_with model: @user do |form| %>          
-            
-          <div class="field">
-            <%= image_tag @user.user_image.to_s, class: "header-icon", width: '65px' ,height: '65px' %>
+        <%= form_with model: @user do |form| %>
+          <div class="room-nav">
+            <%= image_tag @user.user_image.to_s, class: "header-icon profile-icon", width: '65px' ,height: '65px' %>
           </div>
-          <div class="field">
+          <div class="room-nav">
             <%= form.label :アイコン画像 %>
             <%= form.file_field :user_image %>
           </div>
 
-          <div class="field">
+          <div class="room-nav">
             <%= form.label :username, "名前" %>
             <%= form.text_field :username %>
           </div>
 
-          <div class="field">
+          <div class="room-nav">
             <%= form.label :body, "自己紹介" %>
             <%= form.text_field :body %>
           </div>
 
-          <div class="actions">
+          <div class="room-nav">
             <%= form.submit "更新" %>
           </div>
         <% end %>

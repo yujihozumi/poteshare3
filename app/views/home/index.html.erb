@@ -6,7 +6,7 @@
           <p class="form-area-title">Potepan Shareでまだ体験したことのない旅をしよう</p>
           <label>エリア</label>
             <div class="search-form">
-              <%= search_form_for @q, url: '/rooms/search' do |f| %>
+              <%= search_form_for @q, url: rooms_search_path do |f| %>
                 <%= f.search_field :address_cont, class:'home-control',placeholder: 'エリア' %>
                 <%= f.submit '検索', class: "d-none" %>
               <% end %>
@@ -21,18 +21,22 @@
       <h1 class="panel-title">おすすめのエリア</h1>
       <div class="panel-items">
         <div class="panel-item">
+          <%= link_to image_tag( '/home/img_tokyo.jpg' ), rooms_search_path(q: {address_cont: "東京"}) %>
           <span>東京</span>
           <img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg">
         </div>
         <div class="panel-item">
+          <%= link_to image_tag( '/top/img_tokyo.jpg' ), rooms_search_path(q: {address_cont: "大阪"}) %>
           <span>大阪</span>
           <img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg">
         </div>
         <div class="panel-item">
+          <%= link_to image_tag( '/top/img_tokyo.jpg' ), rooms_search_path(q: {address_cont: "京都"}) %>
           <span>京都</span>
           <img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg">
         </div>
         <div class="panel-item">
+          <%= link_to image_tag( '/top/img_tokyo.jpg' ), rooms_search_path(q: {address_cont: "札幌"}) %>
           <span>札幌</span>
           <img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg">
         </div>

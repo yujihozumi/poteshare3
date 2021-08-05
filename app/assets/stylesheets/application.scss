@@ -25,6 +25,7 @@ body {
 
 .header-right {
   float: right;
+  height: 0;
 }
 
 form#room_search {
@@ -65,6 +66,7 @@ input#q_room_body_cont {
   background: none; 
   border: 0; 
 }
+
 .dropdown__body {
   width: 250px;
   background: #fff;
@@ -72,8 +74,8 @@ input#q_room_body_cont {
   border-radius: 4px;
   overflow: hidden;
   position: absolute; 
-  top: 32px;
-  left: 0;
+  top: 10px;
+  right: 6px;
 }
 .dropdown__list { 
   margin: 0;
@@ -173,16 +175,16 @@ input.none {
 img.header-icon {
   border-radius: 50px;
 }
-//////////////////////////////////////////////////////
+
 p.right-menu {
   color: #fff;
   font-size: 15px;
+  margin-right: 40px;
 }
 
 .right-menu-icon {
   display: flex;
   align-items: center;
-  margin-right: 8rem;
 }
 
 .actions {
